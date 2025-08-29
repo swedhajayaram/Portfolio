@@ -4,8 +4,8 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(grey,white);
-  color:black;
+  background: linear-gradient(grey, white);
+  color: black;
   scroll-behavior: calc();
 }
 
@@ -29,6 +29,35 @@ header h1 {
   font-size: 24px;
   animation: slideLeft 1s ease;
   color: pink;
+
+}
+
+.nav-links {
+  visibility: visible;
+}
+
+.menu-toggle{
+  visibility: hidden;
+  position: absolute;
+}
+
+@media (max-width: 600px) {
+  .nav-links{
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    background-color: #fff;
+    position: absolute;
+  }
+  .menu-toggle {
+    visibility: visible;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+
+
 }
 
 nav ul {
@@ -57,7 +86,7 @@ nav ul li a::after {
 }
 
 nav ul li a:hover {
-  color:pink;
+  color: pink;
 }
 
 nav ul li a:hover::after {
@@ -68,19 +97,21 @@ nav ul li a:hover::after {
 ✨ Sections
 =============================== */
 section {
-  padding: 80px 15%;
+  padding: 8px 15%;
   text-align: center;
   animation: fadeIn 1s ease-in-out;
 }
 
-section ,h1 {
+section,
+h1 {
   font-size: 30px;
   margin-bottom: 20px;
   color: black;
   animation: slideDown 1s ease;
 }
 
-section p, section ul {
+section p,
+section ul {
   font-size: 16px;
   line-height: 1.6;
   animation: scaleUp 1s ease;
@@ -127,7 +158,8 @@ form {
   animation: fadeIn 1s ease-in-out;
 }
 
-form input, form textarea {
+form input,
+form textarea {
   padding: 12px;
   border: none;
   border-radius: 10px;
@@ -136,7 +168,8 @@ form input, form textarea {
   transition: 0.3s;
 }
 
-form input:focus, form textarea:focus {
+form input:focus,
+form textarea:focus {
   transform: scale(1.03);
   box-shadow: 0 0 10px green;
 }
@@ -156,7 +189,7 @@ form button:hover {
   transform: scale(1.05);
   background: #fff;
   color: grey;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* ===============================
@@ -175,24 +208,53 @@ footer {
 ✨ Animations
 =============================== */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideLeft {
-  from { transform: translateX(-50px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @keyframes slideDown {
-  from { transform: translateY(-30px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @keyframes scaleUp {
-  from { transform: scale(0.9); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
+
 /* ===============================
 ✨ Typing Animation for Name
 =============================== */
@@ -201,14 +263,22 @@ header h1 {
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 3px solid pink; /* blinking cursor */
+  border-right: 3px solid pink;
+  /* blinking cursor */
   width: 0;
   animation: typing 3s steps(10) forwards, blink 0.7s infinite;
 }
 
 @keyframes typing {
-  from { width: 0; }
-  to { width: 10ch; } /* Swedha J = 8 characters + space → ~10ch */
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 10ch;
+  }
+
+  /* Swedha J = 8 characters + space → ~10ch */
 }
 
 
@@ -224,12 +294,15 @@ header h1 {
 
 /* First role */
 .typing-multi span:nth-child(1) {
-  animation-delay: 3s;  /* starts after name typing */
+  animation-delay: 3s;
+  /* starts after name typing */
 }
+
 /* Second role */
 .typing-multi span:nth-child(2) {
   animation-delay: 6s;
 }
+
 /* Third role */
 .typing-multi span:nth-child(3) {
   animation-delay: 9s;
@@ -249,14 +322,22 @@ header h1 {
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 3px solid black; /* cursor */
+  border-right: 3px solid black;
+  /* cursor */
   width: 0;
   animation: typingName 3s steps(10) forwards, blink 0.7s step-end infinite;
 }
 
 @keyframes typingName {
-  from { width: 0; }
-  to { width: 10ch; } /* Swedha J length */
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 10ch;
+  }
+
+  /* Swedha J length */
 }
 
 /* ===============================
@@ -273,13 +354,15 @@ header h1 {
   animation: blink 0.7s infinite;
   position: relative;
   opacity: 0;
-  animation-delay: 3s; /* starts after name */
+  animation-delay: 3s;
+  /* starts after name */
   animation-fill-mode: forwards;
 }
 
 /* Roles */
 .typing-multi span {
-  --characters: 1; /* default, overridden per span */
+  --characters: 1;
+  /* default, overridden per span */
   position: absolute;
   opacity: 0;
   width: 0;
@@ -289,23 +372,71 @@ header h1 {
 }
 
 /* Role order with delays */
-.typing-multi span:nth-child(1) { animation-delay: 0s; --characters: 14; } /* Civil Engineer */
-.typing-multi span:nth-child(2) { animation-delay: 3s; --characters: 13; } /* Web Developer */
-.typing-multi span:nth-child(3) { animation-delay: 6s; --characters: 13; } /* Java Developer */
-.typing-multi span:nth-child(4) { animation-delay: 9s; --characters: 18; } /* Frontend Developer */
-.typing-multi span:nth-child(5) { animation-delay: 12s; --characters: 22; } /* JavaScript Enthusiast */
+.typing-multi span:nth-child(1) {
+  animation-delay: 0s;
+  --characters: 14;
+}
+
+/* Civil Engineer */
+.typing-multi span:nth-child(2) {
+  animation-delay: 3s;
+  --characters: 13;
+}
+
+/* Web Developer */
+.typing-multi span:nth-child(3) {
+  animation-delay: 6s;
+  --characters: 13;
+}
+
+/* Java Developer */
+.typing-multi span:nth-child(4) {
+  animation-delay: 9s;
+  --characters: 18;
+}
+
+/* Frontend Developer */
+.typing-multi span:nth-child(5) {
+  animation-delay: 12s;
+  --characters: 22;
+}
+
+/* JavaScript Enthusiast */
 
 /* Typing + erasing */
 @keyframes typingErase {
-  0% { opacity: 0; width: 0; }
-  5% { opacity: 1; width: 0; }
-  25% { width: calc(var(--characters) * 1ch); }
-  40% { width: calc(var(--characters) * 1ch); }
-  60% { width: 0; opacity: 0; }
-  100% { opacity: 0; width: 0; }
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+
+  5% {
+    opacity: 1;
+    width: 0;
+  }
+
+  25% {
+    width: calc(var(--characters) * 1ch);
+  }
+
+  40% {
+    width: calc(var(--characters) * 1ch);
+  }
+
+  60% {
+    width: 0;
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+    width: 0;
+  }
 }
 
 /* Cursor blink */
 @keyframes blink {
-  50% { border-color: transparent; }
+  50% {
+    border-color: transparent;
+  }
 }
