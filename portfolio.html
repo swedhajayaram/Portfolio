@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="prostyle.css" />
+</head>
+<body>
+  <header>
+    <h1 class="typing-name">Swedha J</h1>
+  <p class="typing-multi">
+    <span>Civil Engineer</span>
+    <span>Web Developer</span>
+    <span>Java Developer</span>
+    <span>Frontend Developer</span>
+    <span>JavaScript Enthusiast</span>
+  </p>
+    <nav>
+      <div class="logo">MyPortfolio</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">🏠Home</a></li>
+        <li><a href="#about">🙋About</a></li>
+        <li><a href="#projects">💼Projects</a></li>
+        <li><a href="#Education">🎓Education<a></li>
+        <li><a href="#contact">📞Contact</a></li>
+      </ul>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h1>🏠 Welcome to My Portfolio</h1>
+    <p>Hi, I'm Swedha J 👋  
+A passionate Civil Engineering student exploring the world of IT with skills in HTML, CSS, JavaScript, C, and Java.  
+I love building projects that combine creativity and logic, from websites to real-world applications.  
+Welcome to my portfolio!.</p>
+  </section>
+
+  <section id="about">
+    <h2>🙋 About Me</h2>
+    <p>I am currently pursuing my B.E. in Civil Engineering at Government College of Engineering, Thanjavur.  
+Along with my core engineering knowledge, I have developed a strong interest in software development and web technologies.  
+I enjoy problem-solving, designing user-friendly interfaces, and learning new tools that help me grow as a developer.  
+
+✨ Skills: HTML, CSS, JavaScript, C, Java  
+🎯 Goal: To start my career in the IT industry and grow as a full-stack developer.</p>
+  </section>
+
+ <section id="projects">
+    <h2>💼Projects</h2>
+    
+    <div class="project">
+      <h3>📌 E-Commerce Website  </h3>
+      <p>An online shopping platform created using HTML, CSS, JavaScript, and Java. It includes product listing, cart functionality, and a clean UI.</p>
+    </div>
+    <div class="project">
+        <h3>📌 Civil Engineering Academic Project  </h3>
+        <p>"Comparison Study of Prefabricated vs Conventional Residential Building" using STAAD Pro, CPM, and Estimation.</p>
+    </div>
+  </section>
+    <section id="">
+    <h2></h2>
+    <p>  <section id="Education">
+    <h2>🎓Education</h2>
+    <p>I am currently pursuing my B.E. in Civil Engineering at Government College of Engineering, Thanjavur.  
+Along with my core engineering knowledge, I have developed a strong interest in software development and web technologies.  
+I enjoy problem-solving, designing user-friendly interfaces, and learning new tools that help me grow as a developer.  
+</p>
+  </section>
+
+
+  <section id="contact">
+    <h2>📞 Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+
+  <script src="script.js">
+    function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  nav.classList.toggle("active");
+}
+
+// Basic form validation
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  alert("Thank you for your message!");
+  this.reset();
+});
+
+  </script>
+  
+</body>
+</html>

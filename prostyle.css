@@ -1,0 +1,311 @@
+/* ===============================
+✨ General Styles
+=============================== */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(grey,white);
+  color:black;
+  scroll-behavior: calc();
+}
+
+/* ===============================
+✨ Header & Navigation
+=============================== */
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(pink);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  z-index: 1000;
+  animation: fadeIn 1s ease-in-out;
+}
+
+header h1 {
+  font-size: 24px;
+  animation: slideLeft 1s ease;
+  color: pink;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+nav ul li a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: black;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color:pink;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* ===============================
+✨ Sections
+=============================== */
+section {
+  padding: 80px 15%;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+section ,h1 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: black;
+  animation: slideDown 1s ease;
+}
+
+section p, section ul {
+  font-size: 16px;
+  line-height: 1.6;
+  animation: scaleUp 1s ease;
+  color: green;
+}
+
+ul li {
+  margin: 10px 0;
+  list-style: none;
+}
+
+/* ===============================
+✨ Cards for Projects
+=============================== */
+#projects ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0;
+}
+
+#projects ul li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeIn 1s ease-in-out;
+}
+
+#projects ul li:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ===============================
+✨ Contact Form
+=============================== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+form input, form textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+form input:focus, form textarea:focus {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px green;
+}
+
+form button {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: purple;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  transform: scale(1.05);
+  background: #fff;
+  color: grey;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ===============================
+✨ Footer
+=============================== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  margin-top: 30px;
+  font-size: 14px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* ===============================
+✨ Animations
+=============================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(-50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+/* ===============================
+✨ Typing Animation for Name
+=============================== */
+header h1 {
+  font-size: 28px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid pink; /* blinking cursor */
+  width: 0;
+  animation: typing 3s steps(10) forwards, blink 0.7s infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 10ch; } /* Swedha J = 8 characters + space → ~10ch */
+}
+
+
+
+
+
+/* Each role line */
+.typing-multi span {
+  position: absolute;
+  opacity: 0;
+  animation: typingMulti 9s steps(30) infinite;
+}
+
+/* First role */
+.typing-multi span:nth-child(1) {
+  animation-delay: 3s;  /* starts after name typing */
+}
+/* Second role */
+.typing-multi span:nth-child(2) {
+  animation-delay: 6s;
+}
+/* Third role */
+.typing-multi span:nth-child(3) {
+  animation-delay: 9s;
+}
+
+
+
+
+
+
+
+/* ===============================
+✨ Name Typing Effect
+=============================== */
+.typing-name {
+  font-size: 28px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid black; /* cursor */
+  width: 0;
+  animation: typingName 3s steps(10) forwards, blink 0.7s step-end infinite;
+}
+
+@keyframes typingName {
+  from { width: 0; }
+  to { width: 10ch; } /* Swedha J length */
+}
+
+/* ===============================
+✨ Multi-role Typing Animation
+=============================== */
+.typing-multi {
+  display: inline-block;
+  font-size: 18px;
+  margin-top: 5px;
+  height: 24px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid black;
+  animation: blink 0.7s infinite;
+  position: relative;
+  opacity: 0;
+  animation-delay: 3s; /* starts after name */
+  animation-fill-mode: forwards;
+}
+
+/* Roles */
+.typing-multi span {
+  --characters: 1; /* default, overridden per span */
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typingErase 12s steps(var(--characters)) infinite;
+}
+
+/* Role order with delays */
+.typing-multi span:nth-child(1) { animation-delay: 0s; --characters: 14; } /* Civil Engineer */
+.typing-multi span:nth-child(2) { animation-delay: 3s; --characters: 13; } /* Web Developer */
+.typing-multi span:nth-child(3) { animation-delay: 6s; --characters: 13; } /* Java Developer */
+.typing-multi span:nth-child(4) { animation-delay: 9s; --characters: 18; } /* Frontend Developer */
+.typing-multi span:nth-child(5) { animation-delay: 12s; --characters: 22; } /* JavaScript Enthusiast */
+
+/* Typing + erasing */
+@keyframes typingErase {
+  0% { opacity: 0; width: 0; }
+  5% { opacity: 1; width: 0; }
+  25% { width: calc(var(--characters) * 1ch); }
+  40% { width: calc(var(--characters) * 1ch); }
+  60% { width: 0; opacity: 0; }
+  100% { opacity: 0; width: 0; }
+}
+
+/* Cursor blink */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
